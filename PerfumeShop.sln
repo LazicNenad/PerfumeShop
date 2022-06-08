@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32516.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PerfumeShop.API", "PerfumeShop\PerfumeShop.API.csproj", "{C5EC1BF1-B6A1-4F42-BA19-98C402E8F257}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PerfumeShop.Domain", "PerfumeShop.Domain\PerfumeShop.Domain.csproj", "{AA47684F-D11F-40AE-936A-D4CD082FA8FC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PerfumeShop.DataAccess", "PerfumeShop.DataAccess\PerfumeShop.DataAccess.csproj", "{33484D64-7E75-41CC-B340-41302A593EA5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PerfumeShop.Application", "PerfumeShop.Application\PerfumeShop.Application.csproj", "{660BA249-BCC4-4DE5-89C3-E27C0EC73A36}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PerfumeShop.Implementation", "PerfumeShop.Implementation\PerfumeShop.Implementation.csproj", "{FA6DF955-E4A1-4D4B-BEEE-07030BD6D85A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Endpoints summary", "Endpoints summary", "{60B26B4C-8EAE-4648-A75F-7061B0A72961}"
+	ProjectSection(SolutionItems) = preProject
+		Endpoints.txt = Endpoints.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5EC1BF1-B6A1-4F42-BA19-98C402E8F257}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5EC1BF1-B6A1-4F42-BA19-98C402E8F257}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5EC1BF1-B6A1-4F42-BA19-98C402E8F257}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5EC1BF1-B6A1-4F42-BA19-98C402E8F257}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA47684F-D11F-40AE-936A-D4CD082FA8FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA47684F-D11F-40AE-936A-D4CD082FA8FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA47684F-D11F-40AE-936A-D4CD082FA8FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA47684F-D11F-40AE-936A-D4CD082FA8FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33484D64-7E75-41CC-B340-41302A593EA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33484D64-7E75-41CC-B340-41302A593EA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33484D64-7E75-41CC-B340-41302A593EA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33484D64-7E75-41CC-B340-41302A593EA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{660BA249-BCC4-4DE5-89C3-E27C0EC73A36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{660BA249-BCC4-4DE5-89C3-E27C0EC73A36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{660BA249-BCC4-4DE5-89C3-E27C0EC73A36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{660BA249-BCC4-4DE5-89C3-E27C0EC73A36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA6DF955-E4A1-4D4B-BEEE-07030BD6D85A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA6DF955-E4A1-4D4B-BEEE-07030BD6D85A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA6DF955-E4A1-4D4B-BEEE-07030BD6D85A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA6DF955-E4A1-4D4B-BEEE-07030BD6D85A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A3A5FB6A-13A7-40BE-947E-B4F941C6BB88}
+	EndGlobalSection
+EndGlobal

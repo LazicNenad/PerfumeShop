@@ -1,0 +1,34 @@
+Brands - All endpoints require token
+
+GET /api/brands - Keywords
+GET /api/brands/{id} 
+POST /api/brands
+PUT /api/brands/{id}
+DELETE /api/brands/{id}
+
+
+-----------------------------------
+
+POST - /api/initialdata Not required token - for initial data in database
+
+-----------------------------------
+
+Token
+
+POST - /api/token [FromBody] TokenRequest request (email, password) [AllowAnonimous]
+
+-----------------------------------
+
+Users 
+
+GET - /api/users - Keywords [Authorize]
+POST - /api/users - [AllowAnonimous] - registration (UserDTO dto) 
+
+-----------------------------------
+
+Perfumes 
+
+GET /api/perfumes - Keywords []
+GET /api/perfumes/{id}
+POST /api/perfumes [FromBody] PerfumeDto 
+DELETE /api/perfumes/{id} 
