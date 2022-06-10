@@ -46,7 +46,7 @@ namespace PerfumeShop.DataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ProductTypes",
+                name: "ProductTypeIds",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -77,7 +77,7 @@ namespace PerfumeShop.DataAccess.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProductTypes_Type",
-                table: "ProductTypes",
+                table: "ProductTypeIds",
                 column: "Type",
                 unique: true);
         }
@@ -91,7 +91,7 @@ namespace PerfumeShop.DataAccess.Migrations
                 name: "Categories");
 
             migrationBuilder.DropTable(
-                name: "ProductTypes");
+                name: "ProductTypeIds");
         }
     }
 }

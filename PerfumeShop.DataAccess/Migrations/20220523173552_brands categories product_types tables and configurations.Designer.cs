@@ -129,7 +129,7 @@ namespace PerfumeShop.DataAccess.Migrations
                     b.HasIndex("Type")
                         .IsUnique();
 
-                    b.ToTable("ProductTypes");
+                    b.ToTable("ProductTypeIds");
                 });
 #pragma warning restore 612, 618
         }

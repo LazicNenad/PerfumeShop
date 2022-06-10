@@ -1,5 +1,6 @@
 using PerfumeShop.API.Core;
 using PerfumeShop.API.Extensions;
+using PerfumeShop.Application.Emails;
 using PerfumeShop.Application.Logging;
 using PerfumeShop.Application.UseCases.Commands.BrandCommands;
 using PerfumeShop.Application.UseCases.Commands.UserCommands;
@@ -7,6 +8,7 @@ using PerfumeShop.Application.UseCases.Queries;
 using PerfumeShop.DataAccess;
 using PerfumeShop.Domain;
 using PerfumeShop.Implementation;
+using PerfumeShop.Implementation.Emails;
 using PerfumeShop.Implementation.Logging;
 using PerfumeShop.Implementation.UseCases.Commands.EF.Brands;
 using PerfumeShop.Implementation.UseCases.Commands.EF.Users;
@@ -30,6 +32,11 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<PerfumeContext>();
 builder.Services.AddSingleton<UseCaseHandler>();
 
+builder.Services.AddTransient<IEmailSender>(x =>
+{
+    return new SmptEmailSender(settings.EmailOptions.FromEmail, settings.EmailOptions.Password, settings.EmailOptions.Port,
+        settings.EmailOptions.Host);
+});
 
 builder.Services.AddUseCases();
 builder.Services.AddHttpContextAccessor();

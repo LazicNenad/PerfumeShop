@@ -36,9 +36,18 @@ namespace PerfumeShop.API.Controllers
             return Ok(_handler.HandleQuery(query, id));
         }
 
+        [HttpPut("{id}")]
+        public IActionResult Put(int id,[FromBody] CreateUpdatePerfumeDto dto, [FromServices] IUpdatePerfumeCommand command)
+        {
+            dto.Id = id;
+
+            _handler.HandleCommand(command, dto);
+            return StatusCode(StatusCodes.Status204NoContent);
+        }
+
 
         [HttpPost]
-        public IActionResult Post(CreatePerfumeDto dto, [FromServices] ICreatePerfumeCommand command)
+        public IActionResult Post(CreateUpdatePerfumeDto dto, [FromServices] ICreatePerfumeCommand command)
         {
             _handler.HandleCommand(command, dto);
             return StatusCode(StatusCodes.Status201Created);

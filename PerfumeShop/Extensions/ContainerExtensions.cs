@@ -6,6 +6,7 @@ using PerfumeShop.DataAccess;
 using PerfumeShop.Domain;
 using System.Text;
 using Newtonsoft.Json;
+using PerfumeShop.Application.Emails;
 using PerfumeShop.Application.Logging;
 using PerfumeShop.Application.UseCases.Commands.BrandCommands;
 using PerfumeShop.Application.UseCases.Commands.PerfumeCommands;
@@ -19,6 +20,7 @@ using PerfumeShop.Implementation.UseCases.UseCaseLogger;
 using PerfumeShop.Application.UseCases.Queries.Brands;
 using PerfumeShop.Application.UseCases.Queries.Perfumes;
 using PerfumeShop.Application.UseCases.Queries.Users;
+using PerfumeShop.Implementation.Emails;
 using PerfumeShop.Implementation.UseCases.Commands.EF.Perfumes;
 using PerfumeShop.Implementation.UseCases.Queries.EF.Brands;
 using PerfumeShop.Implementation.UseCases.Queries.EF.Perfumes;
@@ -106,6 +108,8 @@ namespace PerfumeShop.API.Extensions
             services.AddTransient<IFindPerfumeQuery, EfFindPerfumeQuery>();
             services.AddTransient<ICreatePerfumeCommand, EfCreatePerfumeCommand>();
             services.AddTransient<IRemovePerfumeCommand, EfRemovePerfumeCommand>();
+            services.AddTransient<IUpdatePerfumeCommand, EfUpdatePerfumeCommand>();
+            
 
             #region Validators
             services.AddTransient<CreateBrandValidation>();
@@ -113,6 +117,8 @@ namespace PerfumeShop.API.Extensions
             services.AddTransient<DeleteBrandValidation>();
             services.AddTransient<CreateUserValidation>();
             services.AddTransient<CreatePerfumeValidation>();
+            services.AddTransient<UpdatePerfumeValidation>();
+
             #endregion
         }
     }

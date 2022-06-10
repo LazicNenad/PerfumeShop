@@ -46,7 +46,7 @@ namespace PerfumeShop.DataAccess.Migrations
                 name: "FK_PerfumeProductTypes_ProductTypes_ProductTypeId",
                 table: "PerfumeProductTypes",
                 column: "ProductTypeId",
-                principalTable: "ProductTypes",
+                principalTable: "ProductTypeIds",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Restrict);
         }
@@ -91,7 +91,7 @@ namespace PerfumeShop.DataAccess.Migrations
                 name: "FK_PerfumeProductType_ProductTypes_ProductTypeId",
                 table: "PerfumeProductType",
                 column: "ProductTypeId",
-                principalTable: "ProductTypes",
+                principalTable: "ProductTypeIds",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Restrict);
         }

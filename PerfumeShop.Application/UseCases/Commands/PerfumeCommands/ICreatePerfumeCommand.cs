@@ -7,7 +7,7 @@ using PerfumeShop.Application.DTO.Perfumes;
 
 namespace PerfumeShop.Application.UseCases.Commands.PerfumeCommands
 {
-    public interface ICreatePerfumeCommand : ICommand<CreatePerfumeDto>
+    public interface ICreatePerfumeCommand : ICommand<CreateUpdatePerfumeDto>
     {
     }
 }

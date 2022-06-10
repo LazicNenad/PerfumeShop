@@ -273,7 +273,7 @@ namespace PerfumeShop.DataAccess.Migrations
                     b.HasIndex("Type")
                         .IsUnique();
 
-                    b.ToTable("ProductTypes");
+                    b.ToTable("ProductTypeIds");
                 });
 
             modelBuilder.Entity("PerfumeShop.Domain.Entities.User", b =>

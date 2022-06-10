@@ -9,7 +9,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PerfumeShop.Application.DTO;
 using PerfumeShop.Application.DTO.Users;
+using PerfumeShop.Application.Emails;
 
 namespace PerfumeShop.Implementation.UseCases.Commands.EF.Users
 {
@@ -17,11 +19,14 @@ namespace PerfumeShop.Implementation.UseCases.Commands.EF.Users
     {
         private readonly PerfumeContext _context;
         private readonly CreateUserValidation _validator;
+        private readonly IEmailSender _sender;
 
-        public EfRegisterUserCommand(PerfumeContext context, CreateUserValidation validator)
+        public EfRegisterUserCommand(PerfumeContext context, CreateUserValidation validator, IEmailSender sender)
         {
+            _sender = sender;
             _context = context;
             _validator = validator;
+
         }
 
         public int Id => 2;
@@ -49,6 +54,13 @@ namespace PerfumeShop.Implementation.UseCases.Commands.EF.Users
             _context.Users.Add(user);
 
             _context.SaveChanges();
+
+            _sender.SendEmail(new MessageDto
+            {
+                To = request.Email,
+                Title = "Successful registration!",
+                Body = "Dear " + request.Username + "\n Please activate your account...."
+            });
         }
     }
 }

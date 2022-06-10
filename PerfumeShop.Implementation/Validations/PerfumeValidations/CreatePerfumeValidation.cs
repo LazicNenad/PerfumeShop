@@ -9,13 +9,17 @@ using PerfumeShop.DataAccess;
 
 namespace PerfumeShop.Implementation.Validations.PerfumeValidations
 {
-    public class CreatePerfumeValidation : AbstractValidator<CreatePerfumeDto>
+    public class CreatePerfumeValidation : AbstractValidator<CreateUpdatePerfumeDto>
     {
         public CreatePerfumeValidation(PerfumeContext context)
         {
             RuleFor(x => x.Name).Cascade(CascadeMode.Stop)
                 .NotEmpty().WithMessage("Name field is required")
                 .MinimumLength(3).WithMessage("Name must have at least 3 characters");
+
+            RuleFor(x => x.Description)
+                .NotEmpty().WithMessage("Description is required field.")
+                .MinimumLength(10).WithMessage("Description minimum length is 10");
 
             RuleFor(x => x.BrandId).Cascade(CascadeMode.Stop)
                 .NotEmpty().WithMessage("BrandId field is required")

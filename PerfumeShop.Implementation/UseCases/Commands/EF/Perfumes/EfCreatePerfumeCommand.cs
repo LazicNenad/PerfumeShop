@@ -24,7 +24,7 @@ namespace PerfumeShop.Implementation.UseCases.Commands.EF.Perfumes
         public string Name => "Create Perfume";
         public string Description => "EntityFramework Create Perfume";
 
-        public void Execute(CreatePerfumeDto request)
+        public void Execute(CreateUpdatePerfumeDto request)
         {
             _validator.ValidateAndThrow(request);
 

@@ -31,4 +31,5 @@ Perfumes
 GET /api/perfumes - Keywords []
 GET /api/perfumes/{id}
 POST /api/perfumes [FromBody] PerfumeDto 
+PUT /api/perfumes/{id} -> Validation fali
 DELETE /api/perfumes/{id} 

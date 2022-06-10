@@ -7,7 +7,7 @@ using PerfumeShop.Application.UseCases.DTO;
 
 namespace PerfumeShop.Application.DTO.Perfumes
 {
-    public class CreatePerfumeDto : BaseDto
+    public class CreateUpdatePerfumeDto : BaseDto
     {
         public string? Name { get; set; }
         public string? Description { get; set; }

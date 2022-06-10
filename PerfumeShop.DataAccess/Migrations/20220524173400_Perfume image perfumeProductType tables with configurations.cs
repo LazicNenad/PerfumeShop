@@ -86,7 +86,7 @@ namespace PerfumeShop.DataAccess.Migrations
                     table.ForeignKey(
                         name: "FK_PerfumeProductType_ProductTypes_ProductTypeId",
                         column: x => x.ProductTypeId,
-                        principalTable: "ProductTypes",
+                        principalTable: "ProductTypeIds",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });

@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using System.Net.Mail;
+using FluentValidation;
 using PerfumeShop.Application.Exceptions;
 using PerfumeShop.Application.Logging;
 
@@ -50,6 +51,16 @@ namespace PerfumeShop.API.Core
                 if (ex is NotFountException)
                 {
                     statusCode = StatusCodes.Status404NotFound;
+                }
+
+                if (ex is SmtpException)
+                {
+                    statusCode = StatusCodes.Status406NotAcceptable;
+                    response = new
+                    {
+                        errors = ex.Message,
+                        success = "Your account has been created, but our mail service is down at the moment!"
+                    };
                 }
 
                 httpContext.Response.StatusCode = statusCode;
