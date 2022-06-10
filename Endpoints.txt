@@ -22,14 +22,16 @@ POST - /api/token [FromBody] TokenRequest request (email, password) [AllowAnonim
 Users 
 
 GET - /api/users - Keywords [Authorize]
-POST - /api/users - [AllowAnonimous] - registration (UserDTO dto) 
+POST - /api/users - [AllowAnonimous] - registration (UserDTO dto) --> Sending Email on registration
 
 -----------------------------------
 
 Perfumes 
 
-GET /api/perfumes - Keywords []
+GET /api/perfumes - Keywords [], PerPage (default 15), Page(default 1)
 GET /api/perfumes/{id}
 POST /api/perfumes [FromBody] PerfumeDto 
 PUT /api/perfumes/{id} -> Validation fali
 DELETE /api/perfumes/{id} 
+
+-----------------------------------

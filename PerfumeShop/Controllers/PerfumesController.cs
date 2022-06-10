@@ -24,7 +24,7 @@ namespace PerfumeShop.API.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public IActionResult Get([FromQuery] BaseSearch search, [FromServices] IGetPerfumesQuery query)
+        public IActionResult Get([FromQuery] PagedSearch search, [FromServices] IGetPerfumesQuery query)
         {
             return Ok(_handler.HandleQuery(query, search));
         }

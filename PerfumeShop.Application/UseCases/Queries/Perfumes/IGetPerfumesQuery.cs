@@ -3,7 +3,7 @@ using PerfumeShop.Application.DTO.Searches;
 
 namespace PerfumeShop.Application.UseCases.Queries.Perfumes;
 
-public interface IGetPerfumesQuery : IQuery<BaseSearch, IEnumerable<PerfumeDto>>
+public interface IGetPerfumesQuery : IQuery<PagedSearch, PagedResponse<PerfumeDto>>
 {
     
 }
