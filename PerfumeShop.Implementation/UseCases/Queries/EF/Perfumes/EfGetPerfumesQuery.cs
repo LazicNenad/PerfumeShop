@@ -47,7 +47,7 @@ public class EfGetPerfumesQuery : EfUseCase, IGetPerfumesQuery
         var toSkip = (request.Page.Value - 1) * request.PerPage.Value;
 
         response.TotalCount = totalCountPerfumes;
-        response.Data = perfumes.Take((int) request.PerPage).Skip(toSkip).Select(x => new PerfumeDto()
+        response.Data = perfumes.Skip(toSkip).Take((int)request.PerPage).Select(x => new PerfumeDto()
         {
             Id = x.Id,
             BrandName = x.Brand.BrandName,

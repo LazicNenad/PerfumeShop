@@ -16,7 +16,7 @@ namespace PerfumeShop.API.Core
 
         public int Id => 0;
 
-        public IEnumerable<int> UseCaseIds => new List<int> { 2, 9, 10 };
+        public IEnumerable<int> UseCaseIds => new List<int> { 2, 9, 10, 14 };
 
         public string Email => "anonimous@asp-api.com";
     }

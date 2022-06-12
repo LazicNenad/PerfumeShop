@@ -28,7 +28,7 @@ namespace PerfumeShop.API.Controllers
         // GET: api/<BrandsController>
         [HttpGet]
         public IActionResult Get(
-            [FromQuery] BaseSearch search,
+            [FromQuery] PagedSearch search,
             [FromServices] IGetBrandsQuery query,
             [FromServices] IApplicationUser user)
         {

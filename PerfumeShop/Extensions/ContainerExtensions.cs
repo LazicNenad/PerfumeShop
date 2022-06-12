@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 using PerfumeShop.Application.Emails;
 using PerfumeShop.Application.Logging;
 using PerfumeShop.Application.UseCases.Commands.BrandCommands;
+using PerfumeShop.Application.UseCases.Commands.MilliliterCommands;
 using PerfumeShop.Application.UseCases.Commands.PerfumeCommands;
 using PerfumeShop.Application.UseCases.Commands.UserCommands;
 using PerfumeShop.Implementation.Logging;
@@ -18,13 +19,17 @@ using PerfumeShop.Implementation.Validations.BrandValidations;
 using PerfumeShop.Implementation.Validations.UserValidations;
 using PerfumeShop.Implementation.UseCases.UseCaseLogger;
 using PerfumeShop.Application.UseCases.Queries.Brands;
+using PerfumeShop.Application.UseCases.Queries.Milliliters;
 using PerfumeShop.Application.UseCases.Queries.Perfumes;
 using PerfumeShop.Application.UseCases.Queries.Users;
 using PerfumeShop.Implementation.Emails;
+using PerfumeShop.Implementation.UseCases.Commands.EF.Milliliters;
 using PerfumeShop.Implementation.UseCases.Commands.EF.Perfumes;
 using PerfumeShop.Implementation.UseCases.Queries.EF.Brands;
+using PerfumeShop.Implementation.UseCases.Queries.EF.Milliliters;
 using PerfumeShop.Implementation.UseCases.Queries.EF.Perfumes;
 using PerfumeShop.Implementation.UseCases.Queries.EF.Users;
+using PerfumeShop.Implementation.Validations.MilliliterValidations;
 using PerfumeShop.Implementation.Validations.PerfumeValidations;
 
 namespace PerfumeShop.API.Extensions
@@ -109,7 +114,10 @@ namespace PerfumeShop.API.Extensions
             services.AddTransient<ICreatePerfumeCommand, EfCreatePerfumeCommand>();
             services.AddTransient<IRemovePerfumeCommand, EfRemovePerfumeCommand>();
             services.AddTransient<IUpdatePerfumeCommand, EfUpdatePerfumeCommand>();
-            
+            services.AddTransient<IGetMillilitersQuery, EfGetMillilitersQuery>();
+            services.AddTransient<ICreateMilliliterCommand, EfCreateMilliliterCommand>();
+            services.AddTransient<IUpdateMilliliterCommand, EfUpdateMilliliterCommand>();
+            services.AddTransient<IRemoveMilliliterCommand, EfRemoveMilliliterCommand>();
 
             #region Validators
             services.AddTransient<CreateBrandValidation>();
@@ -118,6 +126,9 @@ namespace PerfumeShop.API.Extensions
             services.AddTransient<CreateUserValidation>();
             services.AddTransient<CreatePerfumeValidation>();
             services.AddTransient<UpdatePerfumeValidation>();
+            services.AddTransient<CreateMilliliterValidation>();
+            services.AddTransient<UpdateMilliliterValidation>();
+            services.AddTransient<RemoveMilliliterValidation>();
 
             #endregion
         }

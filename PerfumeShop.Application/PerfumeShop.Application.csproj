@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <Folder Include="DTO\ProductTypes\" />
+    <Folder Include="UseCases\Commands\MilliliterCommands\" />
   </ItemGroup>
 
 </Project>

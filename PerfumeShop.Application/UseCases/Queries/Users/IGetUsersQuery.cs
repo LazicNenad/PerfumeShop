@@ -8,7 +8,7 @@ using PerfumeShop.Application.DTO.Users;
 
 namespace PerfumeShop.Application.UseCases.Queries.Users
 {
-    public interface IGetUsersQuery : IQuery<BaseSearch, IEnumerable<GetAllUsersDto>>
+    public interface IGetUsersQuery : IQuery<PagedSearch, PagedResponse<UserDto>>
     {
     }
 }

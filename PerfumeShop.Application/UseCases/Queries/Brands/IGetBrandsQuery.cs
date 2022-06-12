@@ -8,7 +8,7 @@ using PerfumeShop.Application.DTO.Searches;
 
 namespace PerfumeShop.Application.UseCases.Queries.Brands
 {
-    public interface IGetBrandsQuery : IQuery<BaseSearch, IEnumerable<BrandDto>>
+    public interface IGetBrandsQuery : IQuery<PagedSearch, PagedResponse<BrandDto>>
     {
     }
 }

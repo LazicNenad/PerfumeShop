@@ -35,3 +35,8 @@ PUT /api/perfumes/{id} -> Validation fali
 DELETE /api/perfumes/{id} 
 
 -----------------------------------
+
+Milliliters 
+
+GET /api/milliliters - Paginated
+POST /api/milliliters 

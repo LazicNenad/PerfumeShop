@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PerfumeShop.Application.DTO.Perfumes;
 using PerfumeShop.Application.DTO.Searches;
+using PerfumeShop.Application.UseCases.Queries;
 
 namespace PerfumeShop.Implementation.UseCases.Queries.EF.Brands
 {
@@ -23,20 +25,46 @@ namespace PerfumeShop.Implementation.UseCases.Queries.EF.Brands
 
         public string Description => "Getting all brands from database using Entity Framework";
 
-        public IEnumerable<BrandDto> Execute(BaseSearch request)
+        public PagedResponse<BrandDto> Execute(PagedSearch request)
         {
+            var response = new PagedResponse<BrandDto>();
+
             var query = _context.Brands.AsQueryable();
+
+            var totalBrandsCount = _context.Brands.Count();
 
             if (!string.IsNullOrEmpty(request.Keyword))
             {
                 query = query.Where(x => x.BrandName.Contains(request.Keyword));
             }
 
-            return query.Select(x => new BrandDto
+            if (request.PerPage == null || request.PerPage < 1)
+            {
+                request.PerPage = 15;
+            }
+
+            if (request.Page == null || request.Page < 1)
+            {
+                request.PerPage = 1;
+            }
+
+            var toSkip = (request.Page.Value - 1) * request.PerPage.Value;
+
+            response.TotalCount = totalBrandsCount;
+
+            response.Data = query.Skip(toSkip).Take((int)request.PerPage).Select(x => new BrandDto()
             {
                 Id = x.Id,
                 Name = x.BrandName
-            }).ToList();
+            });
+
+
+
+            response.CurrentPage = request.Page.Value;
+            response.ItemsPerPage = request.PerPage.Value;
+
+
+            return response;
 
         }
     }
