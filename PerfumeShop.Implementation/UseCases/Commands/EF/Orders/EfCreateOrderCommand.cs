@@ -3,17 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FluentValidation;
 using PerfumeShop.Application.DTO.Orders;
 using PerfumeShop.Application.UseCases.Commands.OrderCommands;
 using PerfumeShop.DataAccess;
 using PerfumeShop.Domain.Entities;
+using PerfumeShop.Implementation.Validations.OrderValidations;
 
 namespace PerfumeShop.Implementation.UseCases.Commands.EF.Orders
 {
     public class EfCreateOrderCommand : EfUseCase, ICreateOrderCommand
     {
-        public EfCreateOrderCommand(PerfumeContext context) : base(context)
+        private readonly OrderValidation _validator;
+        public EfCreateOrderCommand(PerfumeContext context, OrderValidation validator) : base(context)
         {
+            _validator = validator;
         }
 
         public int Id => 19;
@@ -22,6 +26,8 @@ namespace PerfumeShop.Implementation.UseCases.Commands.EF.Orders
 
         public void Execute(OrderDto request)
         {
+            _validator.ValidateAndThrow(request);
+
             var order = new Order()
             {
                 UserId = request.UserId,
@@ -33,7 +39,7 @@ namespace PerfumeShop.Implementation.UseCases.Commands.EF.Orders
                 Name = Context.Perfumes.Find(x.PerfumeId).Name,
                 Order = order,
                 PerfumeId = x.PerfumeId,
-                MilliliterCapacity = x.MilliliterId,
+                MilliliterCapacity = Context.Milliliters.Find(x.MilliliterId).Capacity,
                 Quantity = x.Quantity,
                 Price = (x.UnitPrice * x.Quantity)
             });

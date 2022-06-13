@@ -32,6 +32,7 @@ using PerfumeShop.Implementation.UseCases.Queries.EF.Milliliters;
 using PerfumeShop.Implementation.UseCases.Queries.EF.Perfumes;
 using PerfumeShop.Implementation.UseCases.Queries.EF.Users;
 using PerfumeShop.Implementation.Validations.MilliliterValidations;
+using PerfumeShop.Implementation.Validations.OrderValidations;
 using PerfumeShop.Implementation.Validations.PerfumeValidations;
 
 namespace PerfumeShop.API.Extensions
@@ -132,6 +133,7 @@ namespace PerfumeShop.API.Extensions
             services.AddTransient<CreateMilliliterValidation>();
             services.AddTransient<UpdateMilliliterValidation>();
             services.AddTransient<RemoveMilliliterValidation>();
+            services.AddTransient<OrderValidation>();
 
             #endregion
         }
