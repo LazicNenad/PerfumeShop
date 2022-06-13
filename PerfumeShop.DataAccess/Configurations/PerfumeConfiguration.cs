@@ -26,6 +26,11 @@ namespace PerfumeShop.DataAccess.Configurations
                    .HasForeignKey(x => x.PerfumeId)
                    .OnDelete(DeleteBehavior.Restrict);
 
+            builder.HasMany(x => x.OrderLines)
+                .WithOne(x => x.Perfume)
+                .HasForeignKey(x => x.PerfumeId)
+                .OnDelete(DeleteBehavior.Restrict);
+
         }
     }
 }

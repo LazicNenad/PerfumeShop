@@ -18,5 +18,6 @@ namespace PerfumeShop.Domain.Entities
         public virtual ICollection<Image> Images { get; set; } = new List<Image>();
         public virtual ICollection<PerfumeProductType> PerfumeProductTypes { get; set; } = new List<PerfumeProductType>();
         public virtual ICollection<PerfumeMilliliter> PerfumeMilliliters { get; set; } = new List<PerfumeMilliliter>();
+        public virtual ICollection<OrderLine> OrderLines { get; set; } = new List<OrderLine>();
     }
 }

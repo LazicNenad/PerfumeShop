@@ -25,7 +25,14 @@ namespace PerfumeShop.DataAccess.Configurations
             builder.HasIndex(x => x.Password);
             builder.HasIndex(x => x.BirthDate);
 
-            builder.HasMany(x => x.UseCases).WithOne(x => x.User).HasForeignKey(x => x.UserId);
+            builder.HasMany(x => x.UseCases)
+                   .WithOne(x => x.User)
+                   .HasForeignKey(x => x.UserId);
+
+            builder.HasMany(x => x.Orders)
+                .WithOne(x => x.User)
+                .HasForeignKey(x => x.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

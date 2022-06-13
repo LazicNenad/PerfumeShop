@@ -68,6 +68,8 @@ namespace PerfumeShop.DataAccess
         public DbSet<PerfumeMilliliter> PerfumeMilliliters { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserUseCase> UserUseCases { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderLine> OrderLines { get; set; }
 
     }
 }

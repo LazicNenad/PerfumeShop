@@ -16,6 +16,8 @@ namespace PerfumeShop.Domain.Entities
         public DateTime BirthDate { get; set; }
 
         public virtual ICollection<UserUseCase> UseCases { get; set; }
+        public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
+
 
     }
 }
