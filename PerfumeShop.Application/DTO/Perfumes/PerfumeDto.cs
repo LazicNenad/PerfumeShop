@@ -11,5 +11,12 @@ public class PerfumeDto : BaseDto
     public string? CategoryName { get; set; }
     public IEnumerable<string> ProductTypes { get; set; } = new List<string>();
     public IEnumerable<ushort> Milliliters { get; set; } = new List<ushort>();
+    public IEnumerable<PerfumeUnitPriceDto>? UnitPrices { get; set; }
 
+}
+
+public class PerfumeUnitPriceDto
+{
+    public int MilliliterCapacity { get; set; }
+    public decimal UnitPrice { get; set; }
 }

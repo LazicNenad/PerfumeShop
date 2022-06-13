@@ -19,6 +19,7 @@ namespace PerfumeShop.DataAccess.Configurations
                    .WithOne(ppt => ppt.ProductType)
                    .HasForeignKey(ppt => ppt.ProductTypeId)
                    .OnDelete(DeleteBehavior.Restrict);
+
         }
     }
 }

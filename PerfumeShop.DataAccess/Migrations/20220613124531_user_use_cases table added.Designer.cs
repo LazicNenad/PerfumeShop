@@ -12,8 +12,8 @@ using PerfumeShop.DataAccess;
 namespace PerfumeShop.DataAccess.Migrations
 {
     [DbContext(typeof(PerfumeContext))]
-    [Migration("20220606134556_Users table added")]
-    partial class Userstableadded
+    [Migration("20220613124531_user_use_cases table added")]
+    partial class user_use_casestableadded
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -220,6 +220,9 @@ namespace PerfumeShop.DataAccess.Migrations
                     b.Property<int>("MilliliterId")
                         .HasColumnType("int");
 
+                    b.Property<decimal>("UnitPrice")
+                        .HasColumnType("decimal(18,2)");
+
                     b.HasKey("PerfumeId", "MilliliterId");
 
                     b.HasIndex("MilliliterId");
@@ -275,7 +278,7 @@ namespace PerfumeShop.DataAccess.Migrations
                     b.HasIndex("Type")
                         .IsUnique();
 
-                    b.ToTable("ProductTypeIds");
+                    b.ToTable("ProductTypes");
                 });
 
             modelBuilder.Entity("PerfumeShop.Domain.Entities.User", b =>
@@ -318,8 +321,8 @@ namespace PerfumeShop.DataAccess.Migrations
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -342,6 +345,19 @@ namespace PerfumeShop.DataAccess.Migrations
                     b.HasIndex("Password");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("PerfumeShop.Domain.Entities.UserUseCase", b =>
+                {
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UseCaseId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserId", "UseCaseId");
+
+                    b.ToTable("UserUseCases");
                 });
 
             modelBuilder.Entity("PerfumeShop.Domain.Entities.Image", b =>
@@ -402,7 +418,7 @@ namespace PerfumeShop.DataAccess.Migrations
                         .IsRequired();
 
                     b.HasOne("PerfumeShop.Domain.Entities.ProductType", "ProductType")
-                        .WithMany("PerfumeProductTypes")
+                        .WithMany("PerfumeTypes")
                         .HasForeignKey("ProductTypeId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -410,6 +426,17 @@ namespace PerfumeShop.DataAccess.Migrations
                     b.Navigation("Perfume");
 
                     b.Navigation("ProductType");
+                });
+
+            modelBuilder.Entity("PerfumeShop.Domain.Entities.UserUseCase", b =>
+                {
+                    b.HasOne("PerfumeShop.Domain.Entities.User", "User")
+                        .WithMany("UseCases")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("PerfumeShop.Domain.Entities.Brand", b =>
@@ -438,7 +465,12 @@ namespace PerfumeShop.DataAccess.Migrations
 
             modelBuilder.Entity("PerfumeShop.Domain.Entities.ProductType", b =>
                 {
-                    b.Navigation("PerfumeProductTypes");
+                    b.Navigation("PerfumeTypes");
+                });
+
+            modelBuilder.Entity("PerfumeShop.Domain.Entities.User", b =>
+                {
+                    b.Navigation("UseCases");
                 });
 #pragma warning restore 612, 618
         }

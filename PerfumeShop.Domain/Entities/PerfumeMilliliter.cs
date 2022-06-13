@@ -10,6 +10,7 @@ namespace PerfumeShop.Domain.Entities
     {
         public int PerfumeId { get; set; }
         public int MilliliterId { get; set; }
+        public decimal UnitPrice { get; set; }
 
         public virtual Perfume Perfume { get; set; }
         public virtual Milliliter Milliliter { get; set; }

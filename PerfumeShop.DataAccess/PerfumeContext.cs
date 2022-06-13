@@ -22,12 +22,14 @@ namespace PerfumeShop.DataAccess
             modelBuilder.Entity<PerfumeMilliliter>().HasKey(x => new { x.PerfumeId, x.MilliliterId });
             modelBuilder.Entity<UserUseCase>().HasKey(x => new { x.UserId, x.UseCaseId });
 
+
             modelBuilder.Entity<Perfume>().HasQueryFilter(x => !x.IsDeleted);
             modelBuilder.Entity<Brand>().HasQueryFilter(x => !x.IsDeleted);
             modelBuilder.Entity<Category>().HasQueryFilter(x => !x.IsDeleted);
             modelBuilder.Entity<Milliliter>().HasQueryFilter(x => !x.IsDeleted);
             modelBuilder.Entity<Image>().HasQueryFilter(x => !x.IsDeleted);
             modelBuilder.Entity<ProductType>().HasQueryFilter(x => !x.IsDeleted);
+
 
             modelBuilder.ApplyConfigurationsFromAssembly(this.GetType().Assembly);
         }
@@ -65,6 +67,7 @@ namespace PerfumeShop.DataAccess
         public DbSet<Milliliter> Milliliters { get; set; }
         public DbSet<PerfumeMilliliter> PerfumeMilliliters { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<UserUseCase> UserUseCases { get; set; }
 
     }
 }

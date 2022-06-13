@@ -55,7 +55,12 @@ public class EfGetPerfumesQuery : EfUseCase, IGetPerfumesQuery
             CategoryName = x.Category.CategoryName,
             Name = x.Name,
             ProductTypes = x.PerfumeProductTypes.Select(ppt => ppt.ProductType.Type),
-            Milliliters = x.PerfumeMilliliters.Select(pm => pm.Milliliter.Capacity)
+            Milliliters = x.PerfumeMilliliters.Select(pm => pm.Milliliter.Capacity),
+            UnitPrices = x.PerfumeMilliliters.Select(y => new PerfumeUnitPriceDto()
+            {
+                UnitPrice = y.UnitPrice,
+                MilliliterCapacity = y.Milliliter.Capacity
+            })
         }).ToList();
         response.CurrentPage = request.Page.Value;
         response.ItemsPerPage = request.PerPage.Value;

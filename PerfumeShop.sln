@@ -15,6 +15,24 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PerfumeShop.Implementation"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Endpoints summary", "Endpoints summary", "{60B26B4C-8EAE-4648-A75F-7061B0A72961}"
 	ProjectSection(SolutionItems) = preProject
+		PerfumeShop.DataAccess\Migrations\20220523173552_brands categories product_types tables and configurations.cs = PerfumeShop.DataAccess\Migrations\20220523173552_brands categories product_types tables and configurations.cs
+		PerfumeShop.DataAccess\Migrations\20220523173552_brands categories product_types tables and configurations.Designer.cs = PerfumeShop.DataAccess\Migrations\20220523173552_brands categories product_types tables and configurations.Designer.cs
+		PerfumeShop.DataAccess\Migrations\20220524173400_Perfume image perfumeProductType tables with configurations.cs = PerfumeShop.DataAccess\Migrations\20220524173400_Perfume image perfumeProductType tables with configurations.cs
+		PerfumeShop.DataAccess\Migrations\20220524173400_Perfume image perfumeProductType tables with configurations.Designer.cs = PerfumeShop.DataAccess\Migrations\20220524173400_Perfume image perfumeProductType tables with configurations.Designer.cs
+		PerfumeShop.DataAccess\Migrations\20220524173554_perfume product types .cs = PerfumeShop.DataAccess\Migrations\20220524173554_perfume product types .cs
+		PerfumeShop.DataAccess\Migrations\20220524173554_perfume product types .Designer.cs = PerfumeShop.DataAccess\Migrations\20220524173554_perfume product types .Designer.cs
+		PerfumeShop.DataAccess\Migrations\20220524174826_milliliter and perfume_milliliter table with configurations and relations.cs = PerfumeShop.DataAccess\Migrations\20220524174826_milliliter and perfume_milliliter table with configurations and relations.cs
+		PerfumeShop.DataAccess\Migrations\20220524174826_milliliter and perfume_milliliter table with configurations and relations.Designer.cs = PerfumeShop.DataAccess\Migrations\20220524174826_milliliter and perfume_milliliter table with configurations and relations.Designer.cs
+		PerfumeShop.DataAccess\Migrations\20220525144033_perfume description max lenght increased.cs = PerfumeShop.DataAccess\Migrations\20220525144033_perfume description max lenght increased.cs
+		PerfumeShop.DataAccess\Migrations\20220525144033_perfume description max lenght increased.Designer.cs = PerfumeShop.DataAccess\Migrations\20220525144033_perfume description max lenght increased.Designer.cs
+		PerfumeShop.DataAccess\Migrations\20220606134556_Users table added.cs = PerfumeShop.DataAccess\Migrations\20220606134556_Users table added.cs
+		PerfumeShop.DataAccess\Migrations\20220606134556_Users table added.Designer.cs = PerfumeShop.DataAccess\Migrations\20220606134556_Users table added.Designer.cs
+		PerfumeShop.DataAccess\Migrations\20220606135635_user use cases table with configurations.cs = PerfumeShop.DataAccess\Migrations\20220606135635_user use cases table with configurations.cs
+		PerfumeShop.DataAccess\Migrations\20220606135635_user use cases table with configurations.Designer.cs = PerfumeShop.DataAccess\Migrations\20220606135635_user use cases table with configurations.Designer.cs
+		PerfumeShop.DataAccess\Migrations\20220606161924_users password field max lenght increased.cs = PerfumeShop.DataAccess\Migrations\20220606161924_users password field max lenght increased.cs
+		PerfumeShop.DataAccess\Migrations\20220606161924_users password field max lenght increased.Designer.cs = PerfumeShop.DataAccess\Migrations\20220606161924_users password field max lenght increased.Designer.cs
+		PerfumeShop.DataAccess\Migrations\20220613115643_unitprice added to perfume milliliter table.cs = PerfumeShop.DataAccess\Migrations\20220613115643_unitprice added to perfume milliliter table.cs
+		PerfumeShop.DataAccess\Migrations\20220613115643_unitprice added to perfume milliliter table.Designer.cs = PerfumeShop.DataAccess\Migrations\20220613115643_unitprice added to perfume milliliter table.Designer.cs
 		Endpoints.txt = Endpoints.txt
 	EndProjectSection
 EndProject
