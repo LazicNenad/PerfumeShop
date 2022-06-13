@@ -13,6 +13,7 @@
   <ItemGroup>
     <Folder Include="DTO\ProductTypes\" />
     <Folder Include="UseCases\Commands\MilliliterCommands\" />
+    <Folder Include="UseCases\Commands\OrderCommands\" />
   </ItemGroup>
 
 </Project>

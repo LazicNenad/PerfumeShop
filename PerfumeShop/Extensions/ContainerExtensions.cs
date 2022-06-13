@@ -10,6 +10,7 @@ using PerfumeShop.Application.Emails;
 using PerfumeShop.Application.Logging;
 using PerfumeShop.Application.UseCases.Commands.BrandCommands;
 using PerfumeShop.Application.UseCases.Commands.MilliliterCommands;
+using PerfumeShop.Application.UseCases.Commands.OrderCommands;
 using PerfumeShop.Application.UseCases.Commands.PerfumeCommands;
 using PerfumeShop.Application.UseCases.Commands.UserCommands;
 using PerfumeShop.Implementation.Logging;
@@ -24,6 +25,7 @@ using PerfumeShop.Application.UseCases.Queries.Perfumes;
 using PerfumeShop.Application.UseCases.Queries.Users;
 using PerfumeShop.Implementation.Emails;
 using PerfumeShop.Implementation.UseCases.Commands.EF.Milliliters;
+using PerfumeShop.Implementation.UseCases.Commands.EF.Orders;
 using PerfumeShop.Implementation.UseCases.Commands.EF.Perfumes;
 using PerfumeShop.Implementation.UseCases.Queries.EF.Brands;
 using PerfumeShop.Implementation.UseCases.Queries.EF.Milliliters;
@@ -118,6 +120,7 @@ namespace PerfumeShop.API.Extensions
             services.AddTransient<ICreateMilliliterCommand, EfCreateMilliliterCommand>();
             services.AddTransient<IUpdateMilliliterCommand, EfUpdateMilliliterCommand>();
             services.AddTransient<IRemoveMilliliterCommand, EfRemoveMilliliterCommand>();
+            services.AddTransient<ICreateOrderCommand, EfCreateOrderCommand>();
 
             #region Validators
             services.AddTransient<CreateBrandValidation>();
